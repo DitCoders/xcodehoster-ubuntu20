@@ -12,9 +12,37 @@ sudo apt install mysql-server
 echo -n "Masukkan password root yang akan dibuat : "
 read passwordmysql
 sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '$passwordmysql';" 
-sudo apt install phpmyadmin
+wget https://files.phpmyadmin.net/phpMyAdmin/5.2.1/phpMyAdmin-5.2.1-all-languages.zip
+unzip phpMyAdmin-5.2.1-all-languages.zip 
+mv phpMyAdmin-5.2.1-all-languages /usr/share/phpmyadmin
+mkdir /usr/share/phpmyadmin/tmp
+chown -R www-data:www-data /usr/share/phpmyadmin
+chmod 777 /usr/share/phpmyadmin/tmp
+echo "
+Alias /phpmyadmin /usr/share/phpmyadmin
+Alias /phpMyAdmin /usr/share/phpmyadmin
+ 
+<Directory /usr/share/phpmyadmin/>
+   AddDefaultCharset UTF-8
+   <IfModule mod_authz_core.c>
+      <RequireAny>
+      Require all granted
+     </RequireAny>
+   </IfModule>
+</Directory>
+ 
+<Directory /usr/share/phpmyadmin/setup/>
+   <IfModule mod_authz_core.c>
+     <RequireAny>
+       Require all granted
+     </RequireAny>
+   </IfModule>
+</Directory>
+" | sudo tee /etc/apache2/conf-available/phpmyadmin.conf
+sudo ln -s /etc/apache2/conf-available/phpmyadmin.conf /etc/apache2/conf-enabled/phpmyadmin.conf
 sudo apt-get install zip unzip php-zip
 sudo a2enmod ssl
+sudo apt install php8.2-mbstring php8.2-mysql
 service apache2 restart
 sudo cp /etc/apache2/apache2.conf backup
 sudo cp support/apache2.conf /etc/apache2/
