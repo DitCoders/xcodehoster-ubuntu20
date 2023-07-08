@@ -109,7 +109,7 @@ Password : $password<br />
 Cara ganti password edit pada bagian config.php, cari password anda dan ganti dengan password yang baru<br />
 <br />
 Login phpmyadmin<br />
-Login : https://$name.xcodehoster.com/phpmyadmin<br />
+Login : https://xcodehoster.com/phpmyadmin<br />
 Username : $name <br />
 Password : $password<br />
 <br />

@@ -7,6 +7,8 @@ Xcodehoster 7.0
 Xcodehoster adalah program hosting yang dirancang khusus untuk Ubuntu Server 22.04 & Linux Mint 21 yang merupakan produk dari X-code (PT. Teknologi Server Indonesia).
 Xcodehoster ini menggunakan PHP 8.2. Untuk implementasinya di https://xcodehoster.com.
 
+Program ini sudah dimodifikasi oleh DitCoders, dengan beberapa perubahan kecil agar kompatibel dengan Ubuntu 20.
+
 File manager
 ------------
 File manager yang digunakan adalah Tiny File Manager dengan sumber dari https://github.com/prasathmani/tinyfilemanager
