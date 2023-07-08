@@ -15,7 +15,7 @@ File manager yang digunakan adalah Tiny File Manager dengan sumber dari https://
 
 Cara menggunakan
 ----------------
-1. git clone https://github.com/kurniawandata/xcodehoster
+1. git clone https://github.com/DitCoders/xcodehoster-ubuntu20
 2. cd xcodehoster
 3. ./install.sh
 4. Arahkan domain dan www yang ada di cloudflare ke ip server 
